@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="lz4-java-1.8.1" level="project" />
+    <orderEntry type="library" name="lz4-java-1.8.2" level="project" />
+    <orderEntry type="library" name="lz4-java-1.8.0" level="project" />
+    <orderEntry type="library" name="commons-collections4-4.5.0" level="project" />
+    <orderEntry type="library" name="snappy-java-1.1.9.1" level="project" />
+    <orderEntry type="library" name="xz-1.9" level="project" />
+    <orderEntry type="library" name="commons-compress-1.27.1" level="project" />
+    <orderEntry type="library" name="commons-lang3-3.13.0" level="project" />
+    <orderEntry type="library" name="commons-lang3-3.17.0" level="project" />
+    <orderEntry type="library" name="commons-codec-1.18.0" level="project" />
+    <orderEntry type="library" name="commons-io-2.18.0" level="project" />
+    <orderEntry type="library" name="zero-allocation-hashing-0.27ea0" level="project" />
+  </component>
+</module>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="DQ_public">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/data/DQ_public.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

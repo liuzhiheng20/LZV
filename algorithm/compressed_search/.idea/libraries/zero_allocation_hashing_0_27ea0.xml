@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="zero-allocation-hashing-0.27ea0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dep/zero-allocation-hashing-0.27ea0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
