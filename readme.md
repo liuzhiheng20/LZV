@@ -41,11 +41,20 @@ A summary of these datasets is shown below:
 | FANYP-Sensors    | Data from monitoring electronic sensor equipment. |
 | TRAJET-Transport | Trip data collected from different transportation modes. |
 
----
 
-[^samsung]: Dataset link or citation for Samsung.
-[^electricity]: Dataset link or citation for Electricity.
-[^gps]: Internal GPS dataset (anonymized).
-[^p12]: PhysioNet Mortality Prediction Challenge dataset.
-[^airquality]: UCI Air Quality dataset.
-[^reger]: Full details in REGER paper: DBLP:reger.
+
+## Algorithm
+We evaluated the performance of the LZV algorithm and the effectiveness of compressed-data queries at the algorithm level.
+### Compression performance
+In `CompressTest.java`, we tested the compression performance of LZV against LZ4, and LZ77, including compression ratio, compression time, and decompression time.
+### Compressed query performance
+In `QueryTest.java`, we tested the performance of compressed-data queries using fully decompression query or compressed-data query.
+## System
+We use the Java version of TsFile for system-level testing. The specific test code is as follows.
+
+### Config
+In `TsFileConfig.java`, you can configure data storage with specific encoding and compression methods by setting the `timeEncoding` and `compressor` parameters.
+### Data prepare
+In `DataPrepare.java`, data from the Dataset is written into TsFile files under the corresponding directories using the specified compression method, in preparation for later query testing.
+### Data query
+In `DataQuery.java`, we tested the time performance of two different query methods for compressed data in TsFile: fully decompressed query and compressed-data query.
