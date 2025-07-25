@@ -44,16 +44,15 @@ public class DataPrepare {
   public static void main(String[] args) throws IOException {
     initializeList();
     System.out.println("Current working directory: " + System.getProperty("user.dir"));
+    String basicPath = System.getProperty("user.dir");
     for (int i = 0; i < CSV_NUM; i++) {
-      File file = new File(pathList.get(i));
-      String parentPath = file.getParent(); // 得到 "/home/user/data/files"
-      int lastFolderIndex = parentPath.lastIndexOf(File.separator) + 1;
-      System.out.println("Last folder name: " + parentPath.substring(lastFolderIndex));
+      //File file = new File("..\\..\\data_LZV\\"+pathList.get(i));
+      System.out.println("dataset: " + pathList.get(i));
       File f =
           FSFactoryProducer.getFSFactory()
               .getFile(
-                  "D:\\senior\\DQ\\research\\compressed_search_paper\\code\\tsfile\\tsfile_data\\tsfile_data_lz77\\"
-                      + parentPath.substring(lastFolderIndex)
+                  basicPath + "\\tsfile_data\\tsfile_data_lz77\\"
+                      + pathList.get(i).substring(0, pathList.get(i).length() - 4)
                       + ".tsfile");
       if (f.exists()) {
         try {
@@ -70,7 +69,7 @@ public class DataPrepare {
         tsFileWriter.registerAlignedTimeseries(new Path(DEVICE_1), measurementSchemas);
 
         // example1
-        writeAligned(tsFileWriter, DEVICE_1, measurementSchemas, pathList.get(i));
+        writeAligned(tsFileWriter, DEVICE_1, measurementSchemas, "..\\..\\data_LZV\\"+pathList.get(i));
       } catch (WriteProcessException e) {
         logger.error("write TSRecord failed", e);
       }
@@ -135,7 +134,7 @@ public class DataPrepare {
           new String(
               Files.readAllBytes(
                   Paths.get(
-                      "D:\\senior\\DQ\\research\\compressed_search_paper\\code\\data\\data\\config.json")));
+                      "..\\..\\data_LZV\\config.json")));
     } catch (IOException e) {
       throw new RuntimeException(e);
     }

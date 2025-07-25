@@ -1,0 +1,73 @@
+{
+    "reger_datasets":[
+        {
+        "path": "Electricity.csv",
+        "column": 1
+        },
+        {
+            "path": "GPS.csv",
+            "column": 1
+        },
+        {
+            "path": "Samsung.csv",
+            "column": 1
+        },
+        {
+            "path": "P12.csv",
+            "column": 1
+        },
+        {
+            "path": "AirQuality.csv",
+            "column": 1
+        },
+        {
+            "path": "CS-Sensors.csv",
+            "column": 1
+        },
+        {
+            "path": "Cyber-Vehicle.csv",
+            "column": 1
+        },
+        {
+            "path": "EPM-Education.csv",
+            "column": 1
+        },
+      {
+        "path": "FANYP-Sensors.csv",
+        "column": 1
+      },
+        {
+            "path": "GW-Magnetic.csv",
+            "column": 1
+        },
+        {
+            "path": "Metro-Traffic.csv",
+            "column": 1
+        },
+        {
+            "path": "Nifty-Stocks.csv",
+            "column": 1
+        },
+        {
+            "path": "TH-Climate.csv",
+            "column": 1
+        },
+        {
+            "path": "TRAJET-Transport.csv",
+            "column": 1
+        },
+        {
+            "path": "TY-Fuel.csv",
+            "column": 1
+        },
+        {
+            "path": "TY-Transport.csv",
+            "column": 1
+        },
+        {
+            "path": "USGS-Earthquakes.csv",
+            "column": 1
+        }
+    ]
+  }
+  

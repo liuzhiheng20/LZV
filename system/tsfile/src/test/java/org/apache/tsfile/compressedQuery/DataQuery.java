@@ -116,20 +116,21 @@ public class DataQuery {
   public static void main(String[] args) throws IOException {
     initializeList();
     List<List<Long>> res = new ArrayList<>();
+    String basicPath = System.getProperty("user.dir");
     for (int i = 0; i < pathsList.size(); i++) {
-      File file = new File(pathsList.get(i));
+      File file = new File("..\\..\\data_LZV\\"+pathsList.get(i));
       String parentPath = file.getParent(); // 得到 "/home/user/data/files"
       int lastFolderIndex = parentPath.lastIndexOf(File.separator) + 1;
       System.out.println("Last folder name: " + parentPath.substring(lastFolderIndex));
-      String path =
-          "D:\\senior\\DQ\\research\\compressed_search_paper\\code\\tsfile\\tsfile_data\\tsfile_data_lz77\\"
-              + parentPath.substring(lastFolderIndex)
+      String path =basicPath+
+          "\\tsfile_data\\tsfile_data_lz77\\"
+              + pathsList.get(i).substring(0, pathsList.get(i).length() - 4)
               + ".tsfile";
 
       ArrayList<Path> paths = new ArrayList<>();
       paths.add(new Path(DEVICE_1, SENSOR_1, true));
 
-      List<Long> times = readColumnByIndex(pathsList.get(i), 0);
+      List<Long> times = readColumnByIndex("..\\..\\data_LZV\\"+pathsList.get(i), 0);
       List<Long> rowTime = new ArrayList<>();
       System.out.println(times.size());
       rowTime.add(Query(times, paths, path));
@@ -170,13 +171,13 @@ public class DataQuery {
   }
 
   public static void writeLongCSV(List<List<Long>> data, boolean withBom) throws IOException {
-    String filename = "D:\\senior\\DQ\\research\\compressed_search_paper\\code\\tsfile\\tsfile_data\\query_time_tsfile_lzvlh.csv"; // 输出文件路径
+    String filename = System.getProperty("user.dir") + "\\tsfile_data\\query_time_tsfile_lzvlh.csv"; // 输出文件路径
 
     try (OutputStreamWriter writer =
             new OutputStreamWriter(new FileOutputStream(filename), StandardCharsets.UTF_8);
         BufferedWriter bw = new BufferedWriter(writer)) {
       if (withBom) {
-        bw.write('\uFEFF'); // 写入 UTF-8 BOM 头，防止中文乱码（尤其在 Excel 中）
+        bw.write('\uFEFF');
       }  
 
       for (List<Long> row : data) {
@@ -199,7 +200,7 @@ public class DataQuery {
           new String(
               Files.readAllBytes(
                   Paths.get(
-                      "D:\\senior\\DQ\\research\\compressed_search_paper\\code\\data\\data\\config.json")));
+                      "..\\..\\data_LZV\\config.json")));
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
