@@ -23,7 +23,7 @@ public class CSVOperator {
     public static void initializeList() {
         String content = null;
         try {
-            content = new String(Files.readAllBytes(Paths.get("data/config.json")));
+            content = new String(Files.readAllBytes(Paths.get("..\\..\\data_LZV\\config.json")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -75,7 +75,7 @@ public class CSVOperator {
 
     public static byte[] readBytesByFileIndex(String filePath, int columnIndex) throws IOException {
         List<Number> columnData = new ArrayList<>();
-
+        filePath = "..\\..\\data_LZV\\"+filePath;
         try (BufferedReader br = Files.newBufferedReader(Paths.get(filePath), Charset.forName("ISO-8859-1"))) {
             // Skip the first line (header)
             br.readLine();
@@ -190,8 +190,7 @@ public class CSVOperator {
     }
 
     public static void writeLongCSV(List<List<Long>> data, boolean withBom) throws IOException {
-        String filename = "data/query_timeColumn_time.csv";  // 输出文件路径
-
+        String filename = System.getProperty("user.dir") + "\\res\\compress_res.csv";
         try (
                 OutputStreamWriter writer = new OutputStreamWriter(
                         new FileOutputStream(filename),
